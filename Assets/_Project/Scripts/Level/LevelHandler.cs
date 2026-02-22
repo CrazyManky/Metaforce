@@ -61,7 +61,6 @@ namespace _Project.Scripts.Level
                 {
                     minDistSqr = distSqr;
                     closest = enemy;
-                    closest.ActiveOutline();
                 }
             }
 
@@ -104,7 +103,10 @@ namespace _Project.Scripts.Level
 
         public void FixedTick()
         {
-            _activePlayer.SetTarget(GetTargetForPlayer());
+            var target = GetTargetForPlayer();
+            if (target != null)
+                target.ActiveOutline();
+            _activePlayer.SetTarget(target);
         }
     }
 }
