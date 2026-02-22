@@ -387,7 +387,6 @@ GameObject:
   m_Component:
   - component: {fileID: 524190674}
   - component: {fileID: 524190673}
-  - component: {fileID: 524190675}
   m_Layer: 0
   m_Name: GameEntryPoint
   m_TagString: Untagged
@@ -414,7 +413,7 @@ MonoBehaviour:
   _inputInstaller: {fileID: 11400000, guid: 28f8925aa3a35e74b90b96fc8725e3b4, type: 2}
   _playerInstaller: {fileID: 11400000, guid: 023478ab0f4743a4b947b916a7202970, type: 2}
   _enemyInstaller: {fileID: 11400000, guid: 2f89b6f0e86d9b340927bb01bb410e01, type: 2}
-  _levelConfig: {fileID: 524190675}
+  _levelConfig: {fileID: 11400000, guid: 1b71c992b8f7004479293ae4deae80d0, type: 2}
   _locationPrefab: {fileID: 5816307221763484454, guid: 16a2150f4839769498b0baf7bb99eb6e, type: 3}
   _counter: {fileID: 1440254489104373549, guid: def49525834d5684883c85c7b6b2cc83, type: 3}
 --- !u!4 &524190674
@@ -432,19 +431,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &524190675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524190672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ca30aa1233049b08b0a166c1627b110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxEnemies>k__BackingField: 3
 --- !u!1 &1572083146
 GameObject:
   m_ObjectHideFlags: 0

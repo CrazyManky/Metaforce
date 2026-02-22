@@ -10,8 +10,10 @@ namespace _Project.Scripts.Interfaces
         public float DelayRespawn { get; }
         public int Health { get; }
         public Vector3 TargetPosition { get; }
+        public void ActiveOutline();
 
         public void SetData(EnemyConfig config);
         public void TakeDamage(int damage);
+        public void DisableOutline();
     }
 }

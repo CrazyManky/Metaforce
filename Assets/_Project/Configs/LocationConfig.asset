@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db1202b4c2f458fb9fe8fd8c179440b, type: 3}
+  m_Name: LocationConfig
+  m_EditorClassIdentifier: 
+  <LocationPrefab>k__BackingField: {fileID: 5816307221763484454, guid: 16a2150f4839769498b0baf7bb99eb6e, type: 3}
+  <MaxEnemies>k__BackingField: 5
+  _position:
+  - {x: 10.4, y: 0, z: 5.5}
+  - {x: -7.6, y: 0, z: 12.5}
+  - {x: 14.2, y: 0, z: -8.3}
+  - {x: -20, y: 0, z: 12.7}
+  - {x: -21.86, y: 0, z: -4.89}

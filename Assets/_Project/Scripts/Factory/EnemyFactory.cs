@@ -15,20 +15,21 @@ namespace _Project.Scripts.Factory
         private EnemyInstaller _enemyInstaller;
         private PoolObjects<EnemyCharacter> _poolObjects;
         private LifetimeScope _enemyScope;
-        private IPointContainer _pointContainer;
+        private LocationConfig _pointContainer;
         public EnemyConfig Config { get; private set; }
 
-        public EnemyFactory(LifetimeScope scope, EnemyInstaller enemyInstaller)
+        public EnemyFactory(LifetimeScope scope, EnemyInstaller enemyInstaller, LocationConfig locationConfig)
         {
             _enemyInstaller = enemyInstaller;
             _lifetimeScope = scope;
+            _pointContainer = locationConfig;
             _poolObjects = new PoolObjects<EnemyCharacter>();
         }
 
         public void Initialize()
         {
             _enemyScope = _lifetimeScope.CreateChild(builder => { _enemyInstaller.Install(builder); });
-            _pointContainer = _enemyScope.Container.Resolve<IPointContainer>();
+            ;
             _poolObjects.Initialize(_enemyScope.Container.Resolve<EnemyCharacter>());
             Config = _enemyScope.Container.Resolve<EnemyConfig>();
         }

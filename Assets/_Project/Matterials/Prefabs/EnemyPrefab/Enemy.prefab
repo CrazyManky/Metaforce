@@ -69,11 +69,12 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: cb86a55e33c1a9f49bf7c44ed81d1c78, type: 2}
+  - {fileID: 2100000, guid: 9624e4d7d4d4ae145b48b6b63674d257, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 3555210026927351288}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_ReceiveGI: 1
@@ -148,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 7170844185859472271}
+  _renderEnemy: {fileID: 3374882911353084071}
 --- !u!54 &7563659812919780933
 Rigidbody:
   m_ObjectHideFlags: 0

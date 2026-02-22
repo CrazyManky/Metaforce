@@ -318,12 +318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf2df478ea01fe4ba40de8da1d56bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _routingPoints:
-  - {fileID: 3905360406891122266}
-  - {fileID: 2124613848410019042}
-  - {fileID: 3813788568687571908}
-  - {fileID: 8428785186925759856}
-  - {fileID: 2568069066426967932}
 --- !u!114 &3470614262230883119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +348,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 991ea4e0099eea145b109a4f3eaa3d73, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 0c3d50f5262d8ed459821074a8c74b7c, type: 2}
   m_BuildHeightMesh: 0
 --- !u!54 &7006747262366872599
 Rigidbody:

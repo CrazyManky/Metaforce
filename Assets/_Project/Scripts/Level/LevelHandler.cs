@@ -5,18 +5,18 @@ using _Project.Scripts.Factory;
 using _Project.Scripts.Interfaces;
 using _Project.Scripts.Player;
 using _Project.Scripts.UI;
-using _Project.SOConfigs;
 using UniRx;
 using UnityEngine;
 using VContainer.Unity;
+using Object = UnityEngine.Object;
+
 
 namespace _Project.Scripts.Level
 {
     public class LevelHandler : IInitializable, IFixedTickable
     {
         private EnemyFactory _enemyFactory;
-        private LevelConfig _levelConfig;
-        private Location _location;
+        private LocationConfig _levelConfig;
         private PlayerFactory _playerFactory;
         private List<IEnemy> _activeEnemies = new();
         private UICounter _counter;
@@ -24,18 +24,18 @@ namespace _Project.Scripts.Level
 
         private ReactiveProperty<int> _deadCount = new(0);
 
-        public LevelHandler(LevelConfig levelConfig, EnemyFactory enemyFactory, PlayerFactory playerFactory,
-            Location location, UICounter counter)
+        public LevelHandler(LocationConfig levelConfig, EnemyFactory enemyFactory, PlayerFactory playerFactory,
+            UICounter counter)
         {
             _levelConfig = levelConfig;
             _enemyFactory = enemyFactory;
             _playerFactory = playerFactory;
-            _location = location;
             _counter = counter;
         }
 
         public void Initialize()
         {
+            Object.Instantiate(_levelConfig.LocationPrefab);
             _deadCount.Subscribe(_counter.SetValue).AddTo(_counter);
             _activePlayer = _playerFactory.CreatePlayer();
             CreateEnemies();
@@ -56,10 +56,12 @@ namespace _Project.Scripts.Level
                 if (!enemy.Transform.gameObject.activeSelf) continue;
 
                 float distSqr = (enemy.Transform.position - playerPos).sqrMagnitude;
+                enemy.DisableOutline();
                 if (distSqr <= minDistSqr)
                 {
                     minDistSqr = distSqr;
                     closest = enemy;
+                    closest.ActiveOutline();
                 }
             }
 
@@ -78,7 +80,7 @@ namespace _Project.Scripts.Level
         private void CreateEnemy()
         {
             var enemy = _enemyFactory.GetEnemy();
-            enemy.transform.position = _location.GetRandomPoint();
+            enemy.transform.position = _levelConfig.GetRandomPoint();
 
             if (!_activeEnemies.Contains(enemy))
                 _activeEnemies.Add(enemy);
@@ -96,7 +98,7 @@ namespace _Project.Scripts.Level
         private void RespawnEnemy(IEnemy enemy)
         {
             enemy.SetData(_enemyFactory.Config);
-            enemy.Transform.position = _location.GetRandomPoint();
+            enemy.Transform.position = _levelConfig.GetRandomPoint();
             enemy.Transform.gameObject.SetActive(true);
         }
 
